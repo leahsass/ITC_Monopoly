@@ -1,6 +1,6 @@
 var Monopoly = {};
 Monopoly.allowRoll = true;
-Monopoly.moneyAtStart = 100;
+Monopoly.moneyAtStart = 150;
 Monopoly.doublesCounter = 0;
 
 
@@ -67,7 +67,7 @@ Monopoly.updatePlayersMoney = function(player,amount){
     Monopoly.playSound("chaching");
     
     //FIND PLACE TO DISPLAY PLAYER'S MONEY IN WINDOW
-    console.log(playersMoney);
+    
 };
 
 
@@ -188,6 +188,7 @@ Monopoly.setNextPlayerTurn = function(){
         return;
     }
 
+    currentPlayerTurn.removeClass("happy-face");
     currentPlayerTurn.removeClass("current-turn");
 
     var nextPlayer = $(".player#player" + nextPlayerId);
@@ -227,6 +228,7 @@ Monopoly.handleBuyProperty = function(player,propertyCell){
         var clickedBtn = $(this);
         if (clickedBtn.is("#yes")){
             Monopoly.handleBuy(player,propertyCell,propertyCost);
+            player.addClass("happy-face");
         }else{
             Monopoly.closeAndNextTurn();
         }
@@ -458,10 +460,9 @@ Monopoly.getNextCell = function(cell){
 Monopoly.handlePassedGo = function(){
     var player = Monopoly.getCurrentPlayer();
     var playersMoney = parseInt(player.attr("data-money"));
-    playersMoney = playersMoney + 1; 
+    playersMoney = playersMoney + 15; 
     player.attr("data-money",playersMoney);
     Monopoly.playSound("chaching");
-    console.log(playersMoney, "YAY!");
 };
 
 
