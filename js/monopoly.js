@@ -1,6 +1,6 @@
 var Monopoly = {};
 Monopoly.allowRoll = true;
-Monopoly.moneyAtStart = 100;
+Monopoly.moneyAtStart = 250;
 Monopoly.doublesCounter = 0;
 
 
@@ -444,7 +444,7 @@ Monopoly.createPlayers = function(numOfPlayers){
 //CALL "passedGo" FUNCTION
 Monopoly.getNextCell = function(cell){
     var currentCellId = parseInt(cell.attr("id").replace("cell",""));
-    var nextCellId = currentCellId + 1;
+    var nextCellId = currentCellId + 15;
     if (nextCellId > 40){
         Monopoly.handlePassedGo();
         nextCellId = 1;
