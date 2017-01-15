@@ -192,11 +192,19 @@ body{
 }
 
 .player#player3 , .player3.cell .content{
-    background-color: #d09461;
+    background-color: #ff831e;
 }
 
 .player#player4 , .player4.cell .content{
-    background-color: #d061cd;
+    background-color: #ff68c5;
+}
+
+.player#player5 , .player5.cell .content{
+    background-color: #ffdc30;
+}
+
+.player#player6 , .player6.cell .content{
+    background-color: #ed0027;
 }
 
 .player.current-turn{
@@ -214,11 +222,23 @@ body{
     width: 25%;
     height: 25%;
     margin: 4%;
-    background-color: black;
+    background-color: #364c9c;
     border-radius: 100px;
     opacity:0;
 }
 
 .dice-dot.right{
     margin-left:36%;
+}
+
+.sad-face {
+    background-image:url(../images/sad-face.png);
+    background-size:contain;
+    background-position:center;
+}
+
+.happy-face {
+    background-image:url(../images/happy-face.png);
+    background-size:contain;
+    background-position:center;
 }
